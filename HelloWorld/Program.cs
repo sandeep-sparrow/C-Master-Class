@@ -7,6 +7,12 @@ using System.Threading.Tasks;
 
 namespace HelloWorld
 {
+    public enum ShippingMethod
+    {
+        RegularAirMail = 1,     // by default = 0
+        RegisteredAirMain = 2,  // by default = 1
+        Express = 3             // by default = 2
+    }
     partial class Program
     {
         static void Main(string[] args)
@@ -34,6 +40,24 @@ namespace HelloWorld
             Console.WriteLine(Flags[0]);
             Console.WriteLine(Flags[1]);
             Console.WriteLine(Flags[2]);
+
+            string path = @"c:\projects\sandeep\files"; // verbatim string
+            Console.WriteLine(path);
+
+
+            var method = ShippingMethod.Express;
+            Console.WriteLine((int)method);
+
+            var methodId = 3;
+            Console.WriteLine((ShippingMethod)methodId);
+            Console.WriteLine(method.ToString());
+
+            // we have string -> enum
+
+            var methodName = "Express";
+            // parsing
+            var shippingmethod = (ShippingMethod)Enum.Parse(typeof(ShippingMethod),methodName);
+            Console.WriteLine(shippingmethod);
 
             Console.Read();
 
