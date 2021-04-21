@@ -6,6 +6,7 @@ namespace HelloWorld
     {
         public class Person
         {
+            public int Age;
             public string FirstName;
             public string SecondName;
 

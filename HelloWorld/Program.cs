@@ -70,9 +70,26 @@ namespace HelloWorld
             array2[0] = 0;
             Console.WriteLine("array1[0]: {0} & array2[0]: {1}", array1[0], array2[0]);
 
+            int number = 1;
+            Increment(number);
+            Console.WriteLine(number);
+
+            var person1 = new Person() { Age = 30 };
+            Console.WriteLine(person1.Age);
+            AgeNumber(person1);
+            Console.WriteLine(person1.Age);
+
             Console.Read();
 
         }
-        
+        public static void Increment(int number)
+        {
+            number += 10;
+        }
+        public static void AgeNumber(Person person)
+        {
+            person.Age += 20;
+        }
+
     }
 }
